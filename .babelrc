@@ -1,0 +1,15 @@
+{
+    "plugins": [
+      "@babel/plugin-proposal-optional-chaining",
+      ["module-resolver",
+        {
+          "cwd": "babelrc",
+          "root": ["./src"],
+          "alias": {
+            "~screens": "./src/screens"
+          }
+        }
+      ]
+    ]
+  }
+  
