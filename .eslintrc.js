@@ -32,7 +32,7 @@ module.exports = {
     indent: 'off',
     'no-mixed-operators': 'off',
     'max-nested-callbacks': ['error', 3],
-    'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2], enforceConst: true }],
+    'no-magic-numbers': ['error', { ignore: [0, 1, -1, 2, 3], enforceConst: true }],
     'react/jsx-wrap-multilines': ['error', { declaration: false, assignment: false }],
     'babel/no-unused-expressions': 1,
     'no-unused-expressions': 'off',
