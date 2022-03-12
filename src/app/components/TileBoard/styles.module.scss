@@ -1,0 +1,17 @@
+$tile-board-size: 404px;
+$tile-gap: 20px;
+
+.container {
+    width: $tile-board-size;
+    height: $tile-board-size;
+}
+
+.tile-board-row {
+    display: flex;
+    flex-direction: row;
+    margin-bottom: $tile-gap;
+}
+
+.tile-board {
+    margin-right: $tile-gap;
+}

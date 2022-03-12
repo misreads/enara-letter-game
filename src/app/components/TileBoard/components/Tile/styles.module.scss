@@ -19,6 +19,10 @@ $tile-size: 82px;
     background: linear-gradient(to bottom,#fad75f, #f76c1d);
     text-align: center;
     cursor: pointer;
+
+    &-selected {
+        cursor: not-allowed;
+    }
 }
 
 .letter {

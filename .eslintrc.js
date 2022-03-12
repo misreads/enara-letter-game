@@ -46,5 +46,6 @@ module.exports = {
     'import/no-cycle': 'off',
     'react/jsx-filename-extension': 'off',
     'react/button-has-type': 'off',
+    'max-len': 'off',
   },
 };
