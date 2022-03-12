@@ -9,12 +9,12 @@ import '../app.scss';
 
 function App() {
   return (
-    <div className={styles.App}>
-      <header className={styles['App-header']}>
-        <WordInput />
+    <div className={styles.container}>
+      <div className={styles['app-container']}>
         <ClearWordButton />
         <TileBoard />
-      </header>
+        <WordInput />
+      </div>
     </div>
   );
 }
