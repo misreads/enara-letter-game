@@ -1,0 +1,46 @@
+$circle-size: 45px;
+$line-width: 48%;
+$line-width-transparent: 52%;
+$gray: #d8d8d8;
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.button {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    border: none;
+    background: none;
+    cursor: pointer;
+}
+
+.title {
+    font-size: 18px;
+    font-weight: bold;
+    color: $gray;
+    text-transform: lowercase;
+    margin-right: 15px;
+} 
+
+.close-button {
+    display:block;
+    box-sizing:border-box;
+    width: $circle-size;
+    height: $circle-size;
+    border-width: 8px;
+    border-style: solid;
+    border-color: #d8d8d8;
+    border-radius: 100%;
+    background: -webkit-linear-gradient(-45deg, transparent 0%, 
+    transparent $line-width, white $line-width,  white $line-width-transparent,
+    transparent $line-width-transparent, transparent 100%), -webkit-linear-gradient(45deg, transparent 0%, 
+    transparent $line-width, white $line-width,  white $line-width-transparent
+    ,transparent $line-width-transparent, transparent 100%);
+    background-color: $gray;
+    transition: all 0.3s ease;
+}
+

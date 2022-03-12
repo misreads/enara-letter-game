@@ -1,5 +1,4 @@
 import React from 'react';
-// import { string } from 'prop-types';
 
 import styles from './styles.module.scss';
 
@@ -11,13 +10,5 @@ function WordInput() {
       </div>
     );
 }
-
-// WordInput.defaultProps = {
-//     letter: 'p',
-// };
-
-// WordInput.propTypes = {
-//     letter: string,
-//   };
 
 export default WordInput;
