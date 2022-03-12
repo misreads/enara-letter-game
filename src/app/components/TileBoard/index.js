@@ -11,7 +11,6 @@ function TileBoard() {
         isSelected: false,
     };
     const [tileBoardState] = useState([...Array(boardSize)].map(() => Array(boardSize).fill(tileInitalState)));
-    console.log('tileBoard', tileBoardState);
     return (
       <div className={styles.container}>
         {
