@@ -6,7 +6,7 @@
           "cwd": "babelrc",
           "root": ["./src"],
           "alias": {
-            "~screens": "./src/screens"
+            "~app": "./src/app"
           }
         }
       ]

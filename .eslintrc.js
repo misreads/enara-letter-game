@@ -45,5 +45,6 @@ module.exports = {
     'import/no-named-as-default': 'off',
     'import/no-cycle': 'off',
     'react/jsx-filename-extension': 'off',
+    'react/button-has-type': 'off',
   },
 };
