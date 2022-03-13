@@ -4,6 +4,7 @@ import { shuffleArray } from '../../utils/functions';
 
 const initialState = {
     board: [],
+    word: '',
   };
 
     const tileInitalState = {
