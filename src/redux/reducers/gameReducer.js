@@ -1,11 +1,7 @@
 import { LOAD_CLEAN_BOARD, CLEAN_BOARD, UPDATE_TILE } from '../actions/gameActions';
 import { BOARD_SIZE, FIRST_BOARD } from '../../constants/boards';
 import { shuffleArray } from '../../utils/functions';
-
-const initialState = {
-    board: [],
-    word: '',
-  };
+import { initialState } from '../constants';
 
     const tileInitalState = {
         id: null,
