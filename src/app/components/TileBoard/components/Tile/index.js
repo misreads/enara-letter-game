@@ -11,8 +11,8 @@ function Tile({
  containerClassName,
 }) {
     return (
-      <div className={containerClassName}>
-        <div id={id} className={styles.container}>
+      <div id={id} className={containerClassName}>
+        <div className={styles.container}>
           <button className={`${styles.tile} ${isSelected ? styles['tile-selected'] : ''}`} disabled={!isClickable}>
             <span className={styles.letter}>{letter}</span>
           </button>
