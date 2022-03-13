@@ -1,5 +1,11 @@
 $container-size: 86px;
 $tile-size: 82px;
+$top-red: #f44f5e;
+$bottom-red: #a0051c;
+$top-green: #afe64e;
+$bottom-green: #439422;
+$top-orange: #fad75f;
+$bottom-orange: #f76c1d;
 
 .container {
     display: flex;
@@ -8,7 +14,11 @@ $tile-size: 82px;
     width: $container-size;
     height: $container-size;
     border-radius: 10px;
-    background: linear-gradient(to bottom,#f44f5e, #a0051c);
+    background: linear-gradient(to bottom,$top-red, $bottom-red);
+    
+    &-match-word {
+        background: linear-gradient(to bottom,$top-green, $bottom-green);
+    }
 }
 
 .tile {
@@ -16,13 +26,17 @@ $tile-size: 82px;
     height: $tile-size;
     border: none;
     border-radius: 8px;
-    background: linear-gradient(to bottom,#fad75f, #f76c1d);
+    background: linear-gradient(to bottom,$top-orange, $bottom-orange);
     text-align: center;
     cursor: pointer;
 
     &-selected {
         cursor: not-allowed;
-        background: linear-gradient(to bottom,#f44f5e, #a0051c);
+        background: linear-gradient(to bottom,$top-red, $bottom-red);
+    }
+
+    &-match-word {
+        background: linear-gradient(to bottom,$top-green, $bottom-green);
     }
 }
 

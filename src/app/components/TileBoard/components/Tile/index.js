@@ -1,8 +1,8 @@
 import React from 'react';
 import { string, number, bool } from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 
-import { updateTile } from '../../../../../redux/actions/gameActions';
+import { updateTile, setWord } from '../../../../../redux/actions/gameActions';
 
 import styles from './styles.module.scss';
 
@@ -16,13 +16,15 @@ function Tile({
  containerClassName,
 }) {
   const dispatch = useDispatch();
+  const match = useSelector((state) => state.game.match);
     const handleClick = () => {
-      dispatch(updateTile(row, col, { isSelected: true, letter }));
+      dispatch(updateTile(row, col, { isSelected: true }));
+      dispatch(setWord(letter));
     };
     return (
       <div id={id} className={containerClassName}>
-        <div className={styles.container}>
-          <button onClick={handleClick} className={`${styles.tile} ${isSelected ? styles['tile-selected'] : ''}`} disabled={!isClickable}>
+        <div className={`${styles.container} ${(match && isSelected) && styles['container-match-word']}`}>
+          <button onClick={handleClick} className={`${styles.tile} ${isSelected && styles['tile-selected']} ${(match && isSelected) && styles['tile-match-word']}`} disabled={!isClickable}>
             <span className={styles.letter}>{letter}</span>
           </button>
         </div>

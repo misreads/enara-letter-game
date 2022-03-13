@@ -1,3 +1,6 @@
+$red: #d1011b;
+$green: #7ed420;
+
 .container {
     display: flex;
     justify-content: center;
@@ -19,11 +22,22 @@
     letter-spacing: 10px;
     text-transform: uppercase;
     margin-left: 30px;
+    color: $red;
+
+    &-valid {
+        color: $green
+    }
 }
 
 .word-state {
     font-size: 16px;
-    color: rgba(#d1011b, 0.3);
+    font-weight: 600;
     text-transform: lowercase;
     margin: 0px 15px 0px 15px;
+    color: rgba($red, 0.3);
+
+    &-valid {
+        color: rgba($green, 0.5);
+    }
 }
+

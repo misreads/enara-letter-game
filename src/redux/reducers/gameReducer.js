@@ -1,5 +1,8 @@
-import { LOAD_CLEAN_BOARD, CLEAN_BOARD, UPDATE_TILE } from '../actions/gameActions';
+import {
+ LOAD_CLEAN_BOARD, CLEAN_BOARD, UPDATE_TILE, SET_WORD,
+} from '../actions/gameActions';
 import { BOARD_SIZE, FIRST_BOARD } from '../../constants/boards';
+import { VALID_WORDS } from '../../constants/dictionary';
 import { shuffleArray } from '../../utils/functions';
 import { initialState } from '../constants';
 
@@ -24,6 +27,7 @@ function gameReducer(state = initialState, action = {}) {
           ...state,
           board: filledBoard,
           word: '',
+          match: false,
         };
       }
 
@@ -38,12 +42,13 @@ function gameReducer(state = initialState, action = {}) {
           ...state,
           board: cleanBoard,
           word: '',
+          match: false,
         };
       }
 
       case UPDATE_TILE: {
-        const { board, word } = state;
-        const { row, col, payload: { isSelected, letter } } = action.payload;
+        const { board } = state;
+        const { row, col, payload: { isSelected } } = action.payload;
         const updatedTile = {
             ...board[row][col], isSelected, isClickable: !isSelected,
         };
@@ -52,13 +57,31 @@ function gameReducer(state = initialState, action = {}) {
               [col]: updatedTile,
             }),
           });
-        const updatedWord = word.concat(letter);
 
         return {
           ...state,
           board: updatedBoard,
-          word: updatedWord,
         };
+      }
+
+      case SET_WORD: {
+        const { word } = state;
+        const { payload: letter } = action;
+
+        const updatedWord = word.concat(letter);
+
+        const lowercaseWord = updatedWord.toLowerCase();
+        const filteredValidWords = VALID_WORDS.filter((validWord) => validWord.startsWith(lowercaseWord));
+        let newMatch = false;
+        if (filteredValidWords.includes(lowercaseWord)) {
+            newMatch = true;
+        }
+
+        return {
+            ...state,
+            word: updatedWord,
+            match: newMatch,
+          };
       }
 
       default:
