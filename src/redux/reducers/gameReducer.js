@@ -1,4 +1,4 @@
-import { LOAD_CLEAN_BOARD, UPDATE_TILE } from '../actions/gameActions';
+import { LOAD_CLEAN_BOARD, CLEAN_BOARD, UPDATE_TILE } from '../actions/gameActions';
 import { BOARD_SIZE, FIRST_BOARD } from '../../constants/boards';
 import { shuffleArray } from '../../utils/functions';
 
@@ -27,6 +27,20 @@ function gameReducer(state = initialState, action = {}) {
         return {
           ...state,
           board: filledBoard,
+          word: '',
+        };
+      }
+
+      case CLEAN_BOARD: {
+        const { board } = state;
+        const cleanBoard = board.map((row) => row.map((col) => ({
+                    ...col,
+                    isClickable: true,
+                    isSelected: false,
+                })));
+        return {
+          ...state,
+          board: cleanBoard,
           word: '',
         };
       }
