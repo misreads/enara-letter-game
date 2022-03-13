@@ -27,6 +27,7 @@ function gameReducer(state = initialState, action = {}) {
         return {
           ...state,
           board: filledBoard,
+          word: '',
         };
       }
 
