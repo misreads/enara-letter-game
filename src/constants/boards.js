@@ -1,0 +1,38 @@
+export const BOARD_SIZE = 4;
+export const FIRST_BOARD = [
+    'A',
+    'B',
+    'C',
+    'D',
+    'E',
+    'F',
+    'G',
+    'H',
+    'I',
+    'J',
+    'K',
+    'L',
+    'M',
+    'N',
+    'O',
+    'P',
+];
+
+export const SECOND_BOARD = [
+    'L',
+    'I',
+    'S',
+    'T',
+    'O',
+    'F',
+    'A',
+    'T',
+    'S',
+    'T',
+    'R',
+    'S',
+    'O',
+    'R',
+    'A',
+    'Y',
+];

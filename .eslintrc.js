@@ -47,5 +47,6 @@ module.exports = {
     'react/jsx-filename-extension': 'off',
     'react/button-has-type': 'off',
     'max-len': 'off',
+    'import/prefer-default-export': 'off',
   },
 };
