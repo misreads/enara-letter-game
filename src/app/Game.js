@@ -1,7 +1,7 @@
 import React from 'react';
 
 import WordInput from './components/WordInput';
-import ClearWordButton from './components/ClearWordButton';
+import ClearButton from './components/ClearButton';
 import TileBoard from './components/TileBoard';
 import styles from './styles.module.scss';
 
@@ -11,7 +11,7 @@ function App() {
   return (
     <div className={styles.container}>
       <div className={styles['app-container']}>
-        <ClearWordButton />
+        <ClearButton />
         <TileBoard />
         <WordInput />
       </div>
