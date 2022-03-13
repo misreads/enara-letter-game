@@ -32,18 +32,22 @@ function gameReducer(state = initialState, action = {}) {
       }
 
       case UPDATE_TILE: {
-        const { board } = state;
-        const { row, col, payload } = action.payload;
-        const updatedTile = { ...board[row][col], isSelected: payload, isClickable: !payload };
+        const { board, word } = state;
+        const { row, col, payload: { isSelected, letter } } = action.payload;
+        const updatedTile = {
+            ...board[row][col], isSelected, isClickable: !isSelected,
+        };
         const updatedBoard = Object.assign([...board], {
             [row]: Object.assign([...board[row]], {
               [col]: updatedTile,
             }),
           });
+        const updatedWord = word.concat(letter);
 
         return {
           ...state,
           board: updatedBoard,
+          word: updatedWord,
         };
       }
 

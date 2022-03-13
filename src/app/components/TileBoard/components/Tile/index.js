@@ -17,7 +17,7 @@ function Tile({
 }) {
   const dispatch = useDispatch();
     const handleClick = () => {
-      dispatch(updateTile(row, col, true));
+      dispatch(updateTile(row, col, { isSelected: true, letter }));
     };
     return (
       <div id={id} className={containerClassName}>
