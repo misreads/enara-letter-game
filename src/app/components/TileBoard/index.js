@@ -36,6 +36,7 @@ function TileBoard() {
                     row={rowId}
                     col={colId}
                     id={id}
+                    key={id}
                     letter={letter}
                     isClickable={isClickable}
                     isSelected={isSelected}
