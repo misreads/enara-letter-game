@@ -23,7 +23,7 @@ function TileBoard() {
         {
         board.map((row, rowId) => (
           <div id={rowId} className={styles['tile-board-row']}>
-            { row.map((tile) => {
+            { row.map((tile, colId) => {
                 const {
                     id,
                     letter,
@@ -33,6 +33,8 @@ function TileBoard() {
                 return (
                   <Tile
                     containerClassName={styles['tile-board']}
+                    row={rowId}
+                    col={colId}
                     id={id}
                     letter={letter}
                     isClickable={isClickable}

@@ -22,6 +22,7 @@ $tile-size: 82px;
 
     &-selected {
         cursor: not-allowed;
+        background: linear-gradient(to bottom,#f44f5e, #a0051c);
     }
 }
 
