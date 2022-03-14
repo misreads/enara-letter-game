@@ -1,3 +1,5 @@
+$mobile-responsive: 768px;
+
 .container {
   text-align: center;
 }
@@ -9,4 +11,10 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+@media screen and (max-width: $mobile-responsive) {
+  .app-container {
+    justify-content: space-evenly;
+  }
 }
