@@ -1,5 +1,9 @@
+@import '../../../../scss/variables';
+
 $container-size: 86px;
 $tile-size: 82px;
+$container-mobile-size: 66px;
+$tile-mobile-size: 62px;
 $top-red: #f44f5e;
 $bottom-red: #a0051c;
 $top-green: #afe64e;
@@ -53,5 +57,17 @@ $bottom-orange: #f76c1d;
     font-weight: bold;
     text-transform: uppercase;
     text-shadow: rgba(#343a40, 0.5) -2px -2px 4px;
+}
+
+@media screen and (max-width: $mobile-responsive) {
+    .container {
+        width: $container-mobile-size;
+        height: $container-mobile-size;
+    }
+
+    .tile {
+        width: $tile-mobile-size;
+        height: $tile-mobile-size;
+    }
 }
 

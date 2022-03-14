@@ -1,5 +1,9 @@
+@import '../../scss/variables';
+
 $tile-board-size: 404px;
+$tile-board-mobile-size: 290px;
 $tile-gap: 20px;
+$tile-mobile-gap: 10px;
 
 .container {
     width: $tile-board-size;
@@ -14,4 +18,19 @@ $tile-gap: 20px;
 
 .tile-board {
     margin-right: $tile-gap;
+}
+
+@media screen and (max-width: $mobile-responsive) {
+    .container {
+        width: $tile-board-mobile-size;
+        height: $tile-board-mobile-size;
+    }
+
+    .tile-board-row {
+        margin-bottom: $tile-mobile-gap;
+    }
+    
+    .tile-board {
+        margin-right: $tile-mobile-gap;
+    }
 }

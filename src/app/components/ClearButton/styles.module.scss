@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 $circle-size: 45px;
 $line-width: 48%;
 $line-width-transparent: 52%;
@@ -43,5 +45,15 @@ $gray: #d8d8d8;
     ,transparent $line-width-transparent, transparent 100%);
     background-color: $gray;
     transition: all 0.3s ease;
+}
+
+@media screen and (max-width: $mobile-responsive) {
+    .container {
+        margin-bottom: 5px;
+    }
+
+    .title {
+        margin-right: 10px;
+    }
 }
 

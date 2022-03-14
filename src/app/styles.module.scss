@@ -1,4 +1,4 @@
-$mobile-responsive: 768px;
+@import './scss/variables';
 
 .container {
   display: flex;
@@ -53,11 +53,18 @@ $mobile-responsive: 768px;
 @media screen and (max-width: $mobile-responsive) {
   .container {
     justify-content: center;
+    height: 90vh;
+    margin-top: 30px;
   }
 
   .app-container {
-    justify-content: space-evenly;
+    justify-content: space-around;
     display: flex;
     flex-direction: column;
+    height: 500px;
+  }
+
+  .button-container {
+    width: 90%;
   }
 }

@@ -1,3 +1,5 @@
+@import '../../scss/variables';
+
 $red: #d1011b;
 $green: #7ed420;
 
@@ -38,6 +40,12 @@ $green: #7ed420;
 
     &-valid {
         color: rgba($green, 0.5);
+    }
+}
+
+@media screen and (max-width: $mobile-responsive) {
+    .container {
+        width: 50%;
     }
 }
 
