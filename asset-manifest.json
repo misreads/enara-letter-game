@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/enara-letter-game/static/css/main.f3982e3b.css",
+    "main.js": "/enara-letter-game/static/js/main.851e64b2.js",
+    "index.html": "/enara-letter-game/index.html",
+    "main.f3982e3b.css.map": "/enara-letter-game/static/css/main.f3982e3b.css.map",
+    "main.851e64b2.js.map": "/enara-letter-game/static/js/main.851e64b2.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.f3982e3b.css",
+    "static/js/main.851e64b2.js"
+  ]
+}
