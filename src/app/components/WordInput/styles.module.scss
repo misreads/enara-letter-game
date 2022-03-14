@@ -45,7 +45,17 @@ $green: #7ed420;
 
 @media screen and (max-width: $mobile-responsive) {
     .container {
-        width: 50%;
+        width: 290px;
     }
 }
+
+@media screen and (max-width: $small-mobile-responsive) {
+    .container {
+        width: 240px;
+    }
+
+    .word-input {
+        font-size: 20px;
+    }
+  }
 

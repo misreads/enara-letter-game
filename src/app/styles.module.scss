@@ -67,4 +67,18 @@
   .button-container {
     width: 90%;
   }
+
+  .app-input {
+    margin-top: 60px;
+  }
+}
+
+@media screen and (max-width: $small-mobile-responsive) {
+  .app-container {
+    grid-gap: 5px;
+  }
+
+  .app-input {
+    margin-top: 40px;
+  }
 }

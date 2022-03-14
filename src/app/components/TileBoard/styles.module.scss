@@ -2,8 +2,11 @@
 
 $tile-board-size: 404px;
 $tile-board-mobile-size: 290px;
+$tile-board-mobile-small-size: 180px;
+
 $tile-gap: 20px;
 $tile-mobile-gap: 10px;
+$tile-mobile-small-gap: 5px;
 
 .container {
     width: $tile-board-size;
@@ -32,5 +35,20 @@ $tile-mobile-gap: 10px;
     
     .tile-board {
         margin-right: $tile-mobile-gap;
+    }
+}
+
+@media screen and (max-width: $small-mobile-responsive) {
+    .container {
+        width: $tile-board-mobile-small-size;
+        height: $tile-board-mobile-small-size;
+    }
+
+    .tile-board-row {
+        margin-bottom: $tile-mobile-small-gap;
+    }
+    
+    .tile-board {
+        margin-right: $tile-mobile-small-gap;
     }
 }

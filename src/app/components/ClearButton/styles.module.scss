@@ -1,8 +1,14 @@
 @import '../../scss/variables';
 
 $circle-size: 45px;
+$circle-small-size: 30px;
+
 $line-width: 48%;
 $line-width-transparent: 52%;
+
+$line-width-small: 48%;
+$line-width-transparent-small: 52%;
+
 $gray: #d8d8d8;
 
 .container {
@@ -54,6 +60,22 @@ $gray: #d8d8d8;
 
     .title {
         margin-right: 10px;
+    }
+}
+
+@media screen and (max-width: $small-mobile-responsive) {
+    .container {
+        margin-bottom: 5px;
+    }
+
+    .title {
+        font-size: 12px;
+        margin-right: 10px;
+    }
+
+    .close-button {
+        width: $circle-small-size;
+        height: $circle-small-size;
     }
 }
 

@@ -2,8 +2,13 @@
 
 $container-size: 86px;
 $tile-size: 82px;
+
 $container-mobile-size: 66px;
 $tile-mobile-size: 62px;
+
+$container-mobile-small-size: 44px;
+$tile-mobile-small-size: 40px;
+
 $top-red: #f44f5e;
 $bottom-red: #a0051c;
 $top-green: #afe64e;
@@ -68,6 +73,22 @@ $bottom-orange: #f76c1d;
     .tile {
         width: $tile-mobile-size;
         height: $tile-mobile-size;
+    }
+}
+
+@media screen and (max-width: $small-mobile-responsive) {
+    .container {
+        width: $container-mobile-small-size;
+        height: $container-mobile-small-size;
+    }
+
+    .tile {
+        width: $tile-mobile-small-size;
+        height: $tile-mobile-small-size;
+    }
+
+    .letter {
+        font-size: 20px;
     }
 }
 

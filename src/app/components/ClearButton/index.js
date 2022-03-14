@@ -18,7 +18,7 @@ function ClearButton({ clearAll }) {
       <div className={styles.container}>
         <button onClick={handleClick} className={styles.button}>
           <span className={styles.title}>
-            {clearAll ? 'clear board and word' : 'clear word'}
+            {clearAll ? 'clear board' : 'clear word'}
           </span>
           <i className={styles['close-button']} />
         </button>
