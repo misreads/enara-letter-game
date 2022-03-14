@@ -13,10 +13,19 @@ function App() {
   return (
     <div className={styles.container}>
       <div className={styles['app-container']}>
-        <ClearButton />
-        {USE_CLEAN_ALL && <ClearButton clearAll />}
-        <TileBoard />
-        <WordInput />
+        <section className={styles['app-buttons']}>
+          <div className={styles['button-container']}>
+            <ClearButton />
+            {USE_CLEAN_ALL && <ClearButton clearAll />}
+          </div>
+
+        </section>
+        <section className={styles['app-board']}>
+          <TileBoard />
+        </section>
+        <section className={styles['app-input']}>
+          <WordInput />
+        </section>
       </div>
     </div>
   );

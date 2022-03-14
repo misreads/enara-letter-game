@@ -1,20 +1,63 @@
 $mobile-responsive: 768px;
 
 .container {
-  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  width: 100%;
 }
 
 .app-container {
   background-color: white;
-  min-height: 100vh;
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: 1fr;
+  grid-template-areas:
+  "board buttons"
+  "board input";
+  height: 404px;
+  grid-gap: 40px;
+}
+
+.app-buttons {
+  grid-area: buttons;
   display: flex;
   flex-direction: column;
+  justify-content: flex-start;
   align-items: center;
+}
+
+.app-board {
+  grid-area: board;
+  display: flex;
   justify-content: center;
+  align-items: center;
+}
+
+.app-input {
+  grid-area: input;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 78px;
 }
 
 @media screen and (max-width: $mobile-responsive) {
+  .container {
+    justify-content: center;
+  }
+
   .app-container {
     justify-content: space-evenly;
+    display: flex;
+    flex-direction: column;
   }
 }

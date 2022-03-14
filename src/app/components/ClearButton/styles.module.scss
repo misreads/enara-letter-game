@@ -5,9 +5,9 @@ $gray: #d8d8d8;
 
 .container {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
-    color: red
+    margin-bottom: 10px;
 }
 
 .button {
