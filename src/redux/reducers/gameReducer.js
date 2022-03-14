@@ -1,23 +1,26 @@
 import {
  LOAD_CLEAN_BOARD, CLEAN_BOARD, UPDATE_TILE, SET_WORD,
 } from '../actions/gameActions';
-import { BOARD_SIZE, FIRST_BOARD } from '../../constants/boards';
+import { USE_INITIAL_BOARD } from '../../constants/config';
+import { BOARD_SIZE, FIRST_BOARD, SECOND_BOARD } from '../../constants/boards';
 import { VALID_WORDS } from '../../constants/dictionary';
 import { shuffleArray, findNeighbours } from '../../utils/functions';
 import { initialState } from '../constants';
 
-    const tileInitalState = {
+const tileInitalState = {
         id: null,
         letter: 'Ñ',
         isClickable: true,
         isSelected: false,
         isValidTarget: false,
-    };
+};
+
+const gameBoard = USE_INITIAL_BOARD ? FIRST_BOARD : SECOND_BOARD;
 
 function gameReducer(state = initialState, action = {}) {
     switch (action.type) {
       case LOAD_CLEAN_BOARD: {
-        const shuffledBoard = shuffleArray(FIRST_BOARD);
+        const shuffledBoard = shuffleArray(gameBoard);
         const initialBoard = [...Array(BOARD_SIZE)].map(() => Array(BOARD_SIZE).fill(tileInitalState));
         const filledBoard = initialBoard.map((row, rowId) => row.map((col, colId) => ({
                     ...col,
