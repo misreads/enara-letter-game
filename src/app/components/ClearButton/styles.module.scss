@@ -1,6 +1,7 @@
 @import '../../scss/variables';
 
 $circle-size: 45px;
+$circle-mobile-size: 38px;
 $circle-small-size: 30px;
 
 $line-width: 48%;
@@ -60,6 +61,11 @@ $gray: #d8d8d8;
 
     .title {
         margin-right: 10px;
+    }
+
+    .close-button {
+        width: $circle-mobile-size;
+        height: $circle-mobile-size;
     }
 }
 
