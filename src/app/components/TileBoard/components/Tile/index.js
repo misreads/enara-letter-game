@@ -13,6 +13,7 @@ function Tile({
  letter,
  isClickable,
  isSelected,
+ isValidTarget,
  containerClassName,
 }) {
   const dispatch = useDispatch();
@@ -24,7 +25,15 @@ function Tile({
     return (
       <div id={id} className={containerClassName}>
         <div className={`${styles.container} ${(match && isSelected) && styles['container-match-word']}`}>
-          <button onClick={handleClick} className={`${styles.tile} ${isSelected && styles['tile-selected']} ${(match && isSelected) && styles['tile-match-word']}`} disabled={!isClickable}>
+          <button
+            onClick={handleClick}
+            className={`${styles.tile} 
+                        ${(isValidTarget) && styles['tile-valid-target']} 
+                        ${(isSelected) && styles['tile-selected']} 
+                        ${(isSelected || !isClickable) && styles['tile-non-clickable']} 
+                        ${(match && isSelected) && styles['tile-match-word']}`}
+            disabled={!isClickable}
+          >
             <span className={styles.letter}>{letter}</span>
           </button>
         </div>
@@ -39,6 +48,7 @@ Tile.defaultProps = {
     id: 0,
     isClickable: true,
     isSelected: false,
+    isValidTarget: false,
     containerClassName: '',
 };
 
@@ -49,6 +59,7 @@ Tile.propTypes = {
     id: number,
     isClickable: bool,
     isSelected: bool,
+    isValidTarget: bool,
     containerClassName: string,
   };
 

@@ -30,13 +30,20 @@ $bottom-orange: #f76c1d;
     text-align: center;
     cursor: pointer;
 
+    &-valid-target {
+        cursor: pointer;
+    }
+
     &-selected {
-        cursor: not-allowed;
         background: linear-gradient(to bottom,$top-red, $bottom-red);
     }
 
     &-match-word {
         background: linear-gradient(to bottom,$top-green, $bottom-green);
+    }
+
+    &-non-clickable {
+        cursor: not-allowed;
     }
 }
 

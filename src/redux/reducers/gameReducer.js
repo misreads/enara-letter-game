@@ -3,7 +3,7 @@ import {
 } from '../actions/gameActions';
 import { BOARD_SIZE, FIRST_BOARD } from '../../constants/boards';
 import { VALID_WORDS } from '../../constants/dictionary';
-import { shuffleArray } from '../../utils/functions';
+import { shuffleArray, findNeighbours } from '../../utils/functions';
 import { initialState } from '../constants';
 
     const tileInitalState = {
@@ -11,6 +11,7 @@ import { initialState } from '../constants';
         letter: 'Ñ',
         isClickable: true,
         isSelected: false,
+        isValidTarget: false,
     };
 
 function gameReducer(state = initialState, action = {}) {
@@ -37,6 +38,7 @@ function gameReducer(state = initialState, action = {}) {
                     ...col,
                     isClickable: true,
                     isSelected: false,
+                    isValidTarget: false,
                 })));
         return {
           ...state,
@@ -47,16 +49,34 @@ function gameReducer(state = initialState, action = {}) {
       }
 
       case UPDATE_TILE: {
-        const { board } = state;
+        const { board, word } = state;
         const { row, col, payload: { isSelected } } = action.payload;
         const updatedTile = {
             ...board[row][col], isSelected, isClickable: !isSelected,
         };
-        const updatedBoard = Object.assign([...board], {
-            [row]: Object.assign([...board[row]], {
+
+        let startBoard = [...board];
+
+        if (word.length >= 0) {
+            startBoard = startBoard.map((rrow) => rrow.map((ccol) => ({
+                ...ccol,
+                isClickable: false,
+            })));
+        }
+
+        const updatedBoard = Object.assign([...startBoard], {
+            [row]: Object.assign([...startBoard[row]], {
               [col]: updatedTile,
             }),
           });
+
+        const validTiles = findNeighbours(updatedBoard, row, col);
+        // eslint-disable-next-line
+        const validTilesBoard = validTiles.map((tile) => {
+            const { row: updateRow, col: updateCol } = tile;
+            const tileToValidate = updatedBoard[updateRow][updateCol];
+            updatedBoard[updateRow][updateCol] = { ...tileToValidate, isClickable: true, isValidTarget: true };
+        });
 
         return {
           ...state,
