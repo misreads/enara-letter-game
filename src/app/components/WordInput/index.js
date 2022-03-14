@@ -15,8 +15,8 @@ function WordInput() {
 
     return (
       <div className={styles.container}>
-        <input type="text" className={`${styles['word-input']} ${match && styles['word-input-valid']}`} value={word} readOnly />
-        <span className={`${styles['word-state']} ${match && styles['word-state-valid']}`}>
+        <input type="text" className={`${styles['word-input']} ${match ? styles['word-input-valid'] : ''}`} value={word} readOnly />
+        <span className={`${styles['word-state']} ${match ? styles['word-state-valid'] : ''}`}>
           {message()}
         </span>
       </div>

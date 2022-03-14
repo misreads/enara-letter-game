@@ -24,14 +24,14 @@ function Tile({
     };
     return (
       <div id={id} className={containerClassName}>
-        <div className={`${styles.container} ${(match && isSelected) && styles['container-match-word']}`}>
+        <div className={`${styles.container} ${(match && isSelected) ? styles['container-match-word'] : ''}`}>
           <button
             onClick={handleClick}
             className={`${styles.tile} 
-                        ${(isValidTarget) && styles['tile-valid-target']} 
-                        ${(isSelected) && styles['tile-selected']} 
-                        ${(isSelected || !isClickable) && styles['tile-non-clickable']} 
-                        ${(match && isSelected) && styles['tile-match-word']}`}
+                        ${(isValidTarget) ? styles['tile-valid-target'] : ''} 
+                        ${(isSelected) ? styles['tile-selected'] : ''} 
+                        ${(isSelected || !isClickable) ? styles['tile-non-clickable'] : ''} 
+                        ${(match && isSelected) ? styles['tile-match-word'] : ''}`}
             disabled={!isClickable}
           >
             <span className={styles.letter}>{letter}</span>
