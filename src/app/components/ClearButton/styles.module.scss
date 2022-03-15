@@ -26,6 +26,10 @@ $gray: #d8d8d8;
     border: none;
     background: none;
     cursor: pointer;
+    
+    &-disabled {
+        cursor: not-allowed;
+    }
 }
 
 .title {
